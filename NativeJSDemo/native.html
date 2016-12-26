@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div style="margin-top: 20px">
+        <h1>原生H5交互</h1>
+    </div>       
+
+    <div>
+        <input type="button" style="width:200px;height:30px" value="调用原生方法" onclick="callNative()">
+    </div>
+    <br/>
+    <div>
+        <input type="button" style="width:200px;height:30px" value="两个参数的方法" onclick="twoParamMethod()">
+    </div>
+    <br/>
+    <div>
+        <input type="button" style="width:200px;height:30px" value="原生回调JS" onclick="callNativeToBack()">
+    </div>
+     
+<script>
+    function callNative() {
+        var paramString = "{\"title\": \"标题\", \"content\": \"内容\"}";
+        MobileClass.nativeLogMethod(paramString);
+    }
+     
+    function twoParamMethod() {
+        var stringOne = "iOS";
+        var stringTwo = "Android";
+        MobileClass.nativeLogMethodWithTwoParamAnotherParam(stringOne,stringTwo);
+    }
+
+    function callNativeToBack() {
+        MobileClass.callBackMethod();
+    }
+
+    function jsMethod(message) {
+        alert(message);
+    }
+</script>
+</body>
+</html>
+
